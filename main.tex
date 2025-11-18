@@ -1,0 +1,212 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\begin{document}
+
+\title{Elastic Fields of an Edge Dislocation}
+\author{}
+\date{}
+\maketitle
+
+\section*{1. Displacement Fields (Edge Dislocation)}
+
+\[
+u_x = \frac{b}{2\pi}
+\left[
+\tan^{-1}\!\left(\frac{y}{x}\right)
++ \frac{x y}{2(1-\nu)(x^2+y^2)}
+\right],
+\]
+
+\[
+u_y = -\frac{b}{2\pi}
+\left[
+\frac{1-2\nu}{4(1-\nu)}
+\ln(x^2+y^2)
++ \frac{x^2 - y^2}{4(1-\nu)(x^2+y^2)}
+\right].
+\]
+
+\\
+\section*{2. Strain Field Derivations}
+
+\subsection*{$\varepsilon_{xx} = \partial u_x / \partial x$}
+
+\[
+\varepsilon_{xx}
+= -\frac{b}{2\pi r}
+\left[
+\sin\theta
++ \frac{\sin\theta\cos 2\theta}{2(1-\nu)}
+\right].
+\]
+
+\subsection*{$\varepsilon_{yy} = \partial u_y / \partial y$}
+
+\[
+\varepsilon_{yy}
+= -\frac{b}{2\pi r}
+\left[
+\frac{1}{2(1-\nu)}\sin\theta
+- \frac{\sin\theta\cos 2\theta}{2(1-\nu)}
+\right].
+\]
+
+\subsection*{$\varepsilon_{xy} = \tfrac{1}{2}(\partial_x u_y + \partial_y u_x)$}
+
+\[
+\varepsilon_{xy}
+=
+\frac{b}{4\pi r(1-\nu)}
+\cos\theta\cos 2\theta.
+\]
+
+\subsection*{Trace term}
+
+\textbf{\[
+\varepsilon_{xx} + \varepsilon_{yy}
+= -\frac{b}{2\pi r}\frac{\sin\theta}{1-\nu}.
+\]}
+
+\newpage
+\section*{3. Hooke's Law (Plane Strain)}
+
+\[
+\sigma_{xx} = 2G\varepsilon_{xx} + \lambda(\varepsilon_{xx}+\varepsilon_{yy}),
+\]
+\[
+\sigma_{yy} = 2G\varepsilon_{yy} + \lambda(\varepsilon_{xx}+\varepsilon_{yy}),
+\]
+\[
+\sigma_{xy} = 2G\varepsilon_{xy}.
+\]
+
+Elastic constants:
+\[
+G = \frac{E}{2(1+\nu)}, \qquad
+\lambda = \frac{2G\nu}{1-2\nu}.
+\]
+
+
+\section*{4. Stress Field Derivations}
+\subsection*{$\sigma_{xx}$}
+
+\[
+\sigma_{xx}
+= 2G\varepsilon_{xx} + \lambda(\varepsilon_{xx}+\varepsilon_{yy}),
+\]
+\[
+\sigma_{xx}
+= 2G\left[
+-\frac{b}{2\pi r}
+\left(
+\sin\theta + \frac{\sin\theta\cos 2\theta}{2(1-\nu)}
+\right)
+\right]
++
+\lambda\left[
+-\frac{b}{2\pi r}\frac{\sin\theta}{1-\nu}
+\right].
+\]
+\[
+\boxed{
+\sigma_{xx}
+=
+-\frac{Gb}{2\pi r(1-\nu)}
+\,\sin\theta
+\left(
+1 - \cos 2\theta
+\right)
+}.
+\]
+\subsection*{$\sigma_{yy}$}
+
+\[
+\sigma_{yy}
+= 2G\varepsilon_{yy} + \lambda(\varepsilon_{xx}+\varepsilon_{yy}),
+\]
+
+\[
+\sigma_{yy}
+= -\frac{b}{2\pi r}\frac{\sin\theta}{1-\nu}
+\left[
+G(1-\cos 2\theta) + \lambda
+\right],
+\]
+
+\[
+\sigma_{yy}
+= -\frac{b}{2\pi r}\frac{\sin\theta}{1-\nu}
+\left[
+2G\sin^2\theta + \frac{2G\nu}{1-2\nu}
+\right].
+\]
+
+\[
+\boxed{
+\sigma_{yy}
+=
+-\frac{Gb}{2\pi r(1-\nu)}
+\,\sin\theta
+\left(
+2\sin^2\theta + \frac{2\nu}{1-2\nu}
+\right)
+}.
+\]
+
+\subsection*{$\sigma_{xy}$}
+
+\[
+\sigma_{xy} = 2G\varepsilon_{xy},
+\]
+
+\[
+\sigma_{xy}
+=
+2G
+\left(
+\frac{b}{4\pi r(1-\nu)}\cos\theta\cos 2\theta
+\right),
+\]
+
+\[
+\boxed{
+\sigma_{xy}
+=
+\frac{Gb}{2\pi r(1-\nu)}
+\cos\theta\cos 2\theta
+}.
+\]
+\newpage
+\section*{5. Final Simplified Classical Stress Fields}
+
+\subsection*{In terms of $(r,\theta)$ only}
+
+\[
+\boxed{
+\sigma_{xx}
+= -\frac{Gb}{2\pi(1-\nu)}\frac{\sin\theta}{r}
+\left(1 - \cos 2\theta\right)
+}
+\]
+
+\[
+\boxed{
+\sigma_{yy}
+= -\frac{Gb}{2\pi(1-\nu)}\frac{\sin\theta}{r}
+\left(1 + \cos 2\theta\right)
+}
+\]
+
+\[
+\boxed{
+\sigma_{xy}
+= \frac{Gb}{2\pi(1-\nu)}\frac{\cos\theta\cos 2\theta}{r}
+}
+\]
+
+These are the textbook elastic stress fields for an edge dislocation.
+
+\end{document}
